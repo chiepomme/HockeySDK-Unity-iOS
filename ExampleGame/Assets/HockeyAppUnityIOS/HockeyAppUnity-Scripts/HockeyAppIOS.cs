@@ -83,6 +83,7 @@ public class HockeyAppIOS : MonoBehaviour {
 				StartCoroutine(SendLogs(GetLogFiles()));
 			}
 		}
+		GameViewLoaded();
 		#endif
 	}
 
@@ -106,7 +107,7 @@ public class HockeyAppIOS : MonoBehaviour {
 		Application.logMessageReceived -= OnHandleLogCallback;
 	}
 
-	void GameViewLoaded(string message) { 
+	void GameViewLoaded() {
 
 		#if (UNITY_IPHONE && !UNITY_EDITOR)
 		string urlString = GetBaseURL();
